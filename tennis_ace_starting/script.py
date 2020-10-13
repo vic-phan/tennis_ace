@@ -10,20 +10,34 @@ print(df.columns)
 
 # perform exploratory analysis here:
 
+#plots a scatter plot of one column vs. the other
+#takes two columns, and their names as arguments
+def explore(col1, col2, name1, name2):
+    plt.scatter(col1, col2)
+    plt.title(name1+" vs. "+name2)
+    plt.xlabel(name1)
+    plt.ylabel(name2)
+    plt.show()
+    plt.clf()
 # BreakPointsOpportunities and Winnings
-plt.scatter(df['BreakPointsOpportunities'], df['Winnings'])
-plt.title("BreakPointsOpportunities vs. Winnings")
-plt.xlabel("BreakPointsOpportunities")
-plt.ylabel("Winnings")
-plt.show()
-plt.clf()
+# plt.scatter(df['BreakPointsOpportunities'], df['Winnings'])
+# plt.title("BreakPointsOpportunities vs. Winnings")
+# plt.xlabel("BreakPointsOpportunities")
+# plt.ylabel("Winnings")
+# plt.show()
+# plt.clf()
 
-plt.scatter(df['FirstServePointsWon'], df['Winnings'])
-plt.title("FirstServePointsWon vs. Winnings")
-plt.xlabel("FirstServePointsWon")
-plt.ylabel("Winnings")
-plt.show()
-plt.clf()
+explore(df['BreakPointsOpportunities'], df['Winnings'], 'BreakPointsOpportunities', 'Winnings')
+explore(df['FirstServePointsWon'], df['Winnings'],'FirstServePointsWon', 'Winnings')
+
+
+
+# plt.scatter(df['FirstServePointsWon'], df['Winnings'])
+# plt.title("FirstServePointsWon vs. Winnings")
+# plt.xlabel("FirstServePointsWon")
+# plt.ylabel("Winnings")
+# plt.show()
+# plt.clf()
 
 
 ## perform single feature linear regressions here:
